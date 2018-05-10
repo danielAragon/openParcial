@@ -25,7 +25,7 @@
 
 						<p:inputText autocomplete="off" id="name"
 							styleClass="form-control"
-							value="#{tipocombustibleController.name}" required="true"
+							value="#{tipoCombustibleController.tipocombustible.name}" required="true"
 							maxlength="120" label="name" />
 					</div>
 				</div>
@@ -40,7 +40,7 @@
 
 						<p:inputText autocomplete="off" id="precioventa"
 							styleClass="form-control"
-							value="#{tipocombustibleController.precioventa}" required="true"
+							value="#{tipoCombustibleController.tipocombustible.precioventa}" required="true"
 							maxlength="120" label="precioventa" />
 					</div>
 				</div>
@@ -55,7 +55,7 @@
 
 						<p:inputText autocomplete="off" id="preciocompra"
 							styleClass="form-control"
-							value="#{tipocombustibleController.preciocompra}" required="true"
+							value="#{tipoCombustibleController.tipocombustible.preciocompra}" required="true"
 							maxlength="120" label="preciocompra" />
 					</div>
 				</div>
@@ -70,11 +70,10 @@
 							actionListener="#{tipoCombustibleController.createTipoCombustible()}"
 							styleClass="btn btn-primary " update="@form"
 							action="tipocombustible_list?faces-redirect=true" />
+							
 						<p:commandButton value="Cancelar"
 							action="tipocombustible_list?faces-redirect=true" immediate="true"
 							styleClass="btn btn-default" ajax="false" />
-
-
 
 					</div>
 				</div>
