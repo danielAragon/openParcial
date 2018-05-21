@@ -8,7 +8,7 @@ spring:
 #estrategia de generacion de base de datos
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/db_springboot?useSSL=false 
+    url: jdbc:mysql://localhost/db_rasbus?useSSL=false 
     username: root
     password: root
     
