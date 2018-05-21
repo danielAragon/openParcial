@@ -10,16 +10,15 @@
 
 	<nav id="navbar-example2"
 		class="navbar-expand-md navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">UPC</a>
+		<a class="navbar-brand" href="#">RasBus</a>
 		<ul class="nav nav-pills">
-			<li class="nav-item"><a class="nav-link" href="#fat">@fat</a></li>
 			<li class="nav-item"><a class="nav-link" href="#mdo"
-				th:href="@{/listar}">Clientes</a></li>
+				th:href="@{/buses}">Buses</a></li>
 		</ul>
 	</nav>
 	<div class="container">
 		<h1 th:text="${titulo}"></h1>
-		<form th:action = "@{/form}" th:object = "${cliente}" method = "post">
+		<form th:action = "@{/busAddEdit}" th:object = "${cliente}" method = "post">
 			<div class="form-group">
 				<label for="nombre">Nombre:</label>
 				 <input
@@ -50,7 +49,7 @@
 			</div>
 			<div class="form-group">
 				 <input
-					type="submit" value="Crear Cliente" class="btn btn-primary"/>
+					type="submit" value="Crear" class="btn btn-primary"/>
 			</div>
 		</form>
 	</div>

@@ -16,18 +16,18 @@ public class ClienteController {
 	@Autowired
 	private IClienteService clienteService;
 
-	@RequestMapping(value = "/listar", method = RequestMethod.GET)
+	@RequestMapping(value = "/buses", method = RequestMethod.GET)
 	public String listar(Model model) {
 		model.addAttribute("titulo", "Listado de clientes");
 		model.addAttribute("clientes", clienteService.findAll());
-		return "listar";
+		return "buses";
 	}
 	
-	@RequestMapping(value = "/form")
+	@RequestMapping(value = "/busAddEdit")
 	public String crear(Model model) {
 		Cliente cliente = new Cliente();
 		model.addAttribute("cliente", cliente);
 		model.addAttribute("Titulo","Formulario Cliente");
-		return "form";
+		return "busAddEdit";
 	}
 }
