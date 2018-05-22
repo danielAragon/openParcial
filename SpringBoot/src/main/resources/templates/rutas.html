@@ -14,6 +14,10 @@
 			<li class="nav-item"><a class="nav-link" href="#mdo"
 				th:href="@{/buses}">Buses</a></li>
 		</ul>
+		<ul class="nav nav-pills">
+			<li class="nav-item"><a class="nav-link" href="#mdo"
+				th:href="@{/rutas}">Rutas</a></li>
+		</ul>
 	</nav>
 
 	<div class="container">
@@ -25,13 +29,17 @@
 			<thead class="table-dark">
 				<tr>
 					<th scope="col">id</th>
-					<th scope="col">nombre</th>
+					<th scope="col">Ruta</th>
+					<th scope="col">action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="ruta: ${rutas}">
 					<td th:text="${ruta.ID}"></td>
 					<td th:text="${ruta.Nombre}"></td>
+					<td>
+                        <a th:href="@{/rutaAddEdit/__${ruta.ID}__}">Edit</a>
+                    </td>
 				</tr>
 			</tbody>
 

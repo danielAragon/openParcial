@@ -3,6 +3,7 @@ package com.hamp.app.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -20,12 +21,20 @@ public class RutaController {
 		model.addAttribute("rutas", rutaService.findAll());
 		return "rutas";
 	}
-	
-	@RequestMapping(value = "/rutaAddEdit")
-	public String crear(Model model) {
+	@RequestMapping(value={"/rutaAddEdit","/rutaAddEdit/{id}"}, method = RequestMethod.GET)
+    public String rutaFindOne(Model model, @PathVariable(required = false, name = "id") Long id) {
+        if (null != id) {
+            model.addAttribute("ruta", rutaService.findOne(id));
+        } else {
+            model.addAttribute("ruta", new Ruta());
+        }
+        return "rutaAddEdit";
+    }
+	@RequestMapping(value = "/rutaAddEdit", method = RequestMethod.POST)
+	public String rutaUpdate(Model model) {
 		Ruta ruta = new Ruta();
 		model.addAttribute("ruta", ruta);
 		model.addAttribute("Titulo","Formulario Ruta");
-		return "rutaAddEdit";
+		return "rutas";
 	}
 }
