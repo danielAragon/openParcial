@@ -31,10 +31,10 @@ public class RutaController {
         return "rutaAddEdit";
     }
 	@RequestMapping(value = "/rutaAddEdit", method = RequestMethod.POST)
-	public String rutaUpdate(Model model) {
-		Ruta ruta = new Ruta();
-		model.addAttribute("ruta", ruta);
-		model.addAttribute("Titulo","Formulario Ruta");
+	public String rutaUpdate(Model model,Ruta ruta) {
+		
+		rutaService.save(ruta);
+		model.addAttribute("rutas", rutaService.findAll());
 		return "rutas";
 	}
 }
