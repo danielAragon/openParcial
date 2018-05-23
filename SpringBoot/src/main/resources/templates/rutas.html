@@ -35,10 +35,10 @@
 			</thead>
 			<tbody>
 				<tr th:each="ruta: ${rutas}">
-					<td th:text="${ruta.ID}"></td>
+					<td th:text="${ruta.Ruta_ID}"></td>
 					<td th:text="${ruta.Nombre}"></td>
 					<td>
-                        <a th:href="@{/rutaAddEdit/__${ruta.ID}__}">Edit</a>
+                        <a th:href="@{/rutaAddEdit/__${ruta.Ruta_ID}__}">Edit</a>
                     </td>
 				</tr>
 			</tbody>

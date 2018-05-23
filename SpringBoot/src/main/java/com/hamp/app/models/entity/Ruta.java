@@ -19,18 +19,18 @@ public class Ruta implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long ID;
+//  @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private String Ruta_ID;
 	
 	@NotEmpty
 	private String Nombre;
 
-	public Long getID() {
-		return ID;
+	public String getRuta_ID() {
+		return Ruta_ID;
 	}
 
-	public void setID(Long iD) {
-		ID = iD;
+	public void setRuta_ID(String iD) {
+		Ruta_ID = iD;
 	}
 
 	public String getNombre() {

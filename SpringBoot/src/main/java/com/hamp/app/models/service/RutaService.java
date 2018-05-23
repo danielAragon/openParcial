@@ -9,7 +9,7 @@ import com.hamp.app.models.dao.IRutaDAO;
 import com.hamp.app.models.entity.Ruta;
 
 @Service
-public class RutaServiceImpl implements IRutaService {
+public class RutaService implements IRutaService {
 
 	@Autowired
 	IRutaDAO rutaDAO;
@@ -27,13 +27,13 @@ public class RutaServiceImpl implements IRutaService {
 	}
 
 	@Override
-	public Ruta findOne(Long t) {
+	public Ruta findOne(String t) {
 		// TODO Auto-generated method stub
 		return (Ruta)rutaDAO.findOne(t);
 	}
 
 	@Override
-	public void delete(Long t) {
+	public void delete(String t) {
 		// TODO Auto-generated method stub
 		rutaDAO.delete(t);
 	}

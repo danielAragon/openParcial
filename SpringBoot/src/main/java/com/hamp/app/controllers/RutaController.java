@@ -22,7 +22,7 @@ public class RutaController {
 		return "rutas";
 	}
 	@RequestMapping(value={"/rutaAddEdit","/rutaAddEdit/{id}"}, method = RequestMethod.GET)
-    public String rutaFindOne(Model model, @PathVariable(required = false, name = "id") Long id) {
+    public String rutaFindOne(Model model, @PathVariable(required = false, name = "ruta_id") String id) {
         if (null != id) {
             model.addAttribute("ruta", rutaService.findOne(id));
         } else {
